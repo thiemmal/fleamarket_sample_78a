@@ -2,7 +2,9 @@
   .Image
     .Image__content
       .Image__content__message 人生を変えるフリマアプリ
-      .Image__content__text 
-      FURIMAは誰でも簡単に出品・購入できる 
-      %br
-      フリマアプリです
+      %p.Image__content__text
+        FURIMAはだれでもかんたんに出品・購入できる 
+        %br
+        フリマアプリです
+      .Image__content__link
+        = link_to image_tag(src= "google-play-badge.png", class: "Image__content__link__google"), "#"

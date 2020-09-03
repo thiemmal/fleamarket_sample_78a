@@ -13,8 +13,25 @@
     align-items: center;
     &__content{
       width: 100%;
-
       margin: 0 auto;
+      &__message{
+        color: #fff;
+        font-size: 58px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__text{
+        color: #fff;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        font-size: 18px;
+        margin: 20px 0 0 2px;
+      }
+      &__link{
+        &__google{
+          height: 70px;
+          width: 180px;
+
+        }
+      }
     }
   }
 }
