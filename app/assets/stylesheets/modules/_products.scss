@@ -18,6 +18,7 @@
         color: #fff;
         font-size: 58px;
         text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        margin: 90px 0 0 10px;
       }
       &__text{
         color: #fff;
@@ -26,10 +27,55 @@
         margin: 20px 0 0 2px;
       }
       &__link{
-        &__google{
-          height: 70px;
+        margin-top: 10px;
+        &__apple{
+          height: 90px;
           width: 180px;
+        }
+        &__google{
+          height: 90px;
+          width: 210px;
 
+        }
+      }
+    }
+  }
+  .Reason{
+    padding: 60px 20px;
+    &__title{
+      text-align: center;
+      font-size: 25px;
+      font-weight: 900;
+    }
+    &__line{
+      width: 8%;
+      background-color: #3CCACE;
+    }
+    &__lists{
+      display: flex;
+      max-width: 1020px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center;
+      &__one{
+        width: 30%;
+        &__content{
+          position: relative;
+          &__image{
+            width: 100%;
+          }
+          &__num{
+          position: absolute;
+          top: 0;
+          left: 0;
+          border-radius: 4%;
+          font-size: 30px;
+          text-align: center;
+          margin: 0 5px 0 0;
+          padding: 10px 20px;
+          background-color: #3CCACE;
+          color: #fff;
+          }
         }
       }
     }

@@ -7,4 +7,23 @@
         %br
         フリマアプリです
       .Image__content__link
+        = link_to image_tag(src= "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "Image__content__link__apple"), "#"
         = link_to image_tag(src= "google-play-badge.png", class: "Image__content__link__google"), "#"
+
+  .Reason
+    .Reason__title FURIMAが選ばれる3つの理由
+    %hr.Reason__line{size: "5", noshade: "", color: "#3CCACE"}
+    %ul.Reason__lists
+      %li.Reason__lists__one
+        .Reason__lists__one__content
+          = image_tag 'pict-reason-01.jpg',class: 'Reason__lists__one__content__image'
+          .Reason__lists__one__content__num 1
+      %li.Reason__lists__one
+        .Reason__lists__one__content
+          = image_tag 'pict-reason-01.jpg',class: 'Reason__lists__one__content__image'
+          .Reason__lists__one__content__num 1
+      %li.Reason__lists__one
+        .Reason__lists__one__content
+          = image_tag 'pict-reason-01.jpg',class: 'Reason__lists__one__content__image'
+          .Reason__lists__one__content__num 1
+      
