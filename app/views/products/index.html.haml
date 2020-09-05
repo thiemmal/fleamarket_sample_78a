@@ -83,7 +83,72 @@
         %p.Feature__lists__set__text
           お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
 
+  .Product
+    .Product__theme 全ての商品
+    .Product__lists
+      = link_to '#' do
+        .Product__lists__set
+          =image_tag(src= "beef.jpeg", class: "Product__lists__set__image")
+          .Product__lists__set__content
+            .Product__lists__set__content__information
+              .Product__lists__set__content__information__name テスト
+              .Product__lists__set__content__information__price 10000円
+              .Product__lists__set__content__information__tax (税込)
+            .Product__lists__set__content__star 
+              .Product__lists__set__content__star__icon
+                = icon("fa", "star") 
+              .Product__lists__set__content__star__Evaluation 1
 
-.Exhibition-btn
-  .Exhibition-btn__name 出品する
-  =link_to image_tag(src= "icon_camera.png", class: "Exhibition-btn__image"), "#"
+      = link_to '#' do
+        .Product__lists__set
+          =image_tag(src= "IMG_9072.jpeg", class: "Product__lists__set__image")
+          .Product__lists__set__content
+            .Product__lists__set__content__information
+              .Product__lists__set__content__information__name ee
+              .Product__lists__set__content__information__price 1000円
+              .Product__lists__set__content__information__tax (税込)
+            .Product__lists__set__content__star 
+              = icon("fa", "star")
+              .Product__lists__set__content__star__Evaluation 0
+
+      = link_to '#' do
+        .Product__lists__set
+          =image_tag(src= "a007.png", class: "Product__lists__set__image")
+          .Product__lists__set__content
+            .Product__lists__set__content__information
+              .Product__lists__set__content__information__name product3
+              .Product__lists__set__content__information__price 30000円
+              .Product__lists__set__content__information__tax (税込)
+            .Product__lists__set__content__star 
+              = icon("fa", "star")
+              .Product__lists__set__content__star__Evaluation 0
+      
+      = link_to '#' do
+        .Product__lists__set
+          =image_tag(src= "a004.png", class: "Product__lists__set__image")
+          .Product__lists__set__content
+            .Product__lists__set__content__information
+              .Product__lists__set__content__information__name product2
+              .Product__lists__set__content__information__price 20000円
+              .Product__lists__set__content__information__tax (税込)
+            .Product__lists__set__content__star 
+              = icon("fa", "star")
+              .Product__lists__set__content__star__Evaluation 0
+      
+      = link_to '#' do
+        .Product__lists__set
+          =image_tag(src= "a001.png", class: "Product__lists__set__image")
+          .Product__lists__set__content
+            .Product__lists__set__content__information
+              .Product__lists__set__content__information__name product1
+              .Product__lists__set__content__information__price 10000円
+              .Product__lists__set__content__information__tax (税込)
+            .Product__lists__set__content__star 
+              = icon("fa", "star")
+              .Product__lists__set__content__star__Evaluation 1
+
+
+= link_to '#' do
+  .Exhibition-btn
+    .Exhibition-btn__name 出品する
+    =image_tag(src= "icon_camera.png", class: "Exhibition-btn__image")
