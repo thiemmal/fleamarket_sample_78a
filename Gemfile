@@ -68,3 +68,5 @@ gem "haml-rails", ">= 1.0", '<= 2.0.1'
 
 gem 'carrierwave'
 gem 'fog-aws'
+
+gem 'font-awesome-sass'
