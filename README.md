@@ -11,13 +11,13 @@
 |first_furigana|string|null: false|
 |family_furigana|string|null: false|
 |birthday|integer|null: false|
-|recipient|string||
+|recipient受取人名|string||
 |recipient_furigana|string||
-|zip_cord|integer|null: false|
-|prefecture|string|null: false|
-|city|string|null: false|
-|address|string|null: false|
-|mansion|string||
+|zip_cord郵便番号|integer|null: false|
+|prefecture都道府県|string|null: false|
+|city市町村|string|null: false|
+|address番地|string|null: false|
+|mansionマンション名部屋番号|string||
 |tel|integer||
 ### Association
 - has_many :products
@@ -31,9 +31,9 @@
 |category_id|integer|null: false, foreign_key: true|
 |brand_id|integer|foreign_key: true|
 |condition|string|null: false|
-|fee_side|string|null: false|
-|origin|string|null: false|
-|days|string|null: false|
+|fee_side送料の負担は誰|string|null: false|
+|origin発送地|string|null: false|
+|days発送までの日数|string|null: false|
 |price|integer|null: false|
 ### Association
 - belongs_to :user, foreign_key: 'user_id'
