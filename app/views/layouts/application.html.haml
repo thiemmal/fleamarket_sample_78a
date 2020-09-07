@@ -8,4 +8,83 @@
     = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
+    %header.Top
+      .Top__innerTop
+        .Top__innerTop__main
+          %h1.Logo
+            %a{href:"#"}
+              = image_tag src="logo.png"
+          .Top__innerTop__main__seach
+            %form.Top__innerTop__main__seach__box{action:"#", acceptcharset:"UTF-8", method:"get"}
+              %input{name:"utf8", type:"hidden" ,value:"✓"}
+              %input.Form__inputText{"placeholder": "キーワードから探す", "type": "text"}
+              %button.Top__innerTop__main__seach__box__botan{type:"submit"}
+                .Top__innerTop__main__seach__box__botan__icon
+                  = image_tag src="http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg" , class: "Contents"
+              %input{type:"hidden" , name:"authenticity_token" ,value:"z9MMmqcTltZ6rohkw4uyJvd7IBqIFXhoPJYuLz8YPYc9GLAwsDw0cGPiGKUI04onzh/EkA5mnongEZ4YunihSA=="}
+          %ul.result
+
+        .Mokuji
+          %ul.Mokuji__themeLeft
+            %li.Mokuji__themeLeft__item.Mokuji__themeLeft__item--one
+              %a{ id:"cateBtn", href:"#"}
+                カテゴリー
+            %li.Mokuji__themeLeft__item
+              %a{ id:"braBtn", href:"#"}
+                ブランド
+          %ul.Mokuji__themeRight
+            %li.Mokuji__themeRight__item.Mokuji__themeRight__item--log
+              %a{ href:"#"}
+                ログイン
+            %li.Mokuji__themeRight__item.Mokuji__themeRight__item--new
+              %a{ href:"#"}
+                新規会員登録
     = yield
+    %footer.Bottom
+      %ul.Bottom__contents
+        %li.Bottom__contents__menu
+          %h2.Bottom__contents__menu__head
+            FURIMAについて
+          %ul
+            %li
+              %a{href:"#"}
+                会社概要（運営会社）
+            %li
+              %a{href:"#"}
+                プライバシーポリシー
+            %li
+              %a{href:"#"}
+                FURIMA利用規約
+            %li
+              %a{href:"#"}
+                ポイントに関する特約
+        %li.Bottom__contents__menu
+          %h2.Bottom__contents__menu__head
+            FURIMAを見る
+          %ul
+            %li
+              %a{href:"#"}
+                カテゴリー一覧
+            %li
+              %a{href:"#"}
+                ブランド一覧
+        %li.Bottom__contents__menu
+          %h2.Bottom__contents__menu__head
+            ヘルプ＆ガイド
+          %ul
+            %li
+              %a{href:"#"}
+                FURIMAガイド
+            %li
+              %a{href:"#"}
+                FURIMAロゴ利用ガイドライン
+            %li
+              %a{href:"#"}
+                FURIMA利用規約
+            %li
+              %a{href:"#"}
+                お知らせ
+      .foologo
+        %a{href:"#"}
+          = image_tag src="logo-white.png"
+        %p© FURIMA
