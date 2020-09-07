@@ -2,9 +2,9 @@
 ## usersテーブル
 |Column|Type|Options|
 |------|----|-------|
-|email|string|null: false, unique: true|
+|email|string|null: false|
 |password|string|null: false|
-|nickname|string|null: false, unique: true|
+|nickname|string|null: false|
 |gender|string||
 |first_name|string|null: false|
 |family_name|string|null: false|
@@ -36,7 +36,7 @@
 |days発送までの日数|string|null: false|
 |price|integer|null: false|
 ### Association
-- belongs_to :user
+- belongs_to :user, foreign_key: 'user_id'
 - belongs_to :category
 - belongs_to :brand
 - has_many :images
@@ -58,10 +58,3 @@
 ### Association
 - has_many :products
 
-## images
-|Column|Type|Options|
-|------|----|-------|
-|url|string|null: false|
-|product_id|integer|null: false, foreign_key: true|
-### Association
-- belongs_to :product
