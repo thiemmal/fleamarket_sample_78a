@@ -2,7 +2,7 @@
   .Top__innerTop
     .Top__innerTop__main
       %h1.Logo
-        %a{href:"#"}
+        = link_to "#" do
           = image_tag src="logo.png"
       .Top__innerTop__main__seach
         %form.Top__innerTop__main__seach__box{action:"#", acceptcharset:"UTF-8", method:"get"}
@@ -17,15 +17,15 @@
     .Mokuji
       %ul.Mokuji__themeLeft
         %li.Mokuji__themeLeft__item.Mokuji__themeLeft__item--one
-          %a{ id:"cateBtn", href:"#"}
+          = link_to "#" , id:"cateBtn"do
             カテゴリー
         %li.Mokuji__themeLeft__item
-          %a{ id:"braBtn", href:"#"}
+          = link_to "#" , id:"cateBtn"do
             ブランド
       %ul.Mokuji__themeRight
         %li.Mokuji__themeRight__item.Mokuji__themeRight__item--log
-          %a{ href:"#"}
+          = link_to "#" do
             ログイン
         %li.Mokuji__themeRight__item.Mokuji__themeRight__item--new
-          %a{ href:"#"}
+          = link_to "#" do
             新規会員登録
