@@ -2,7 +2,7 @@
   .Top__innerTop
     .Top__innerTop__main
       %h1.Logo
-        %a{href:"#"}
+        = link_to "/" do
           = image_tag src="logo.png"
       .Top__innerTop__main__seach
         %form.Top__innerTop__main__seach__box{action:"#", acceptcharset:"UTF-8", method:"get"}
@@ -13,19 +13,18 @@
               = image_tag src="http://furima.tokyo/assets/icon-search-60a83ada85216fe00789cd16065281694d9a08948275fef83683fadcf131d84d.svg" , class: "Contents"
           %input{type:"hidden" , name:"authenticity_token" ,value:"z9MMmqcTltZ6rohkw4uyJvd7IBqIFXhoPJYuLz8YPYc9GLAwsDw0cGPiGKUI04onzh/EkA5mnongEZ4YunihSA=="}
       %ul.result
-
     .Mokuji
       %ul.Mokuji__themeLeft
         %li.Mokuji__themeLeft__item.Mokuji__themeLeft__item--one
-          %a{ id:"cateBtn", href:"#"}
+          = link_to "#" , id:"cateBtn"do
             カテゴリー
         %li.Mokuji__themeLeft__item
-          %a{ id:"braBtn", href:"#"}
+          = link_to "#" , id:"cateBtn"do
             ブランド
       %ul.Mokuji__themeRight
         %li.Mokuji__themeRight__item.Mokuji__themeRight__item--log
-          %a{ href:"#"}
+          = link_to "#" do
             ログイン
         %li.Mokuji__themeRight__item.Mokuji__themeRight__item--new
-          %a{ href:"#"}
+          = link_to "#" do
             新規会員登録
