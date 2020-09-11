@@ -36,13 +36,4 @@ namespace :deploy do
   end
   before :starting, 'deploy:upload'
   after :finishing, 'deploy:cleanup'
-
-  set :default_env, {
-    rbenv_root: "/home/user/.rbenv",
-    path: "/home/user/.rbenv/bin:$PATH",
-    region: 'ap-northeast-1',
-    aws_access_key_id: ENV["AWS_ACCESS_KEY_ID"],
-    aws_secret_access_key: ENV["AWS_SECRET_ACCESS_KEY"],
-  }
-
 end
