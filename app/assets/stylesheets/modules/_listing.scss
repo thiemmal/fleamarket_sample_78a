@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.Listing{
+  height: 100vh;
+  background-color: #EEEEEE;
+  .Logo{
+    height: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    &__image{
+      margin-top: 30px;
+      height: 65px;
+      width: 25%;
+    }
+  }
+  .Product{
+    width: 75%;
+    margin: 0 auto;
+    background-color: #fff;
+    height: 100%;
+    &__image{
+      padding-top: 30px;
+      border-bottom: 2px solid #EEEEEE;
+      padding-bottom: 20px;
+      &__title{
+        font-size: 15px;
+        margin-left: 25px;
+        span{
+          color: #fff;
+          background-color: red;
+          padding: 2px 2px;
+          font-size: 13px;
+        }
+      }
+      &__detail{
+        font-size: 13px;
+        margin-top: 7px;
+        margin-left: 25px;
+      }
+      &__submit{
+        height: 80px;
+        margin-left: 25px;
+        width: 80%;
+        background-color: bisque;
+      }
+    }
+  }
+}

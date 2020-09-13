@@ -1,1 +1,14 @@
-a
+.Listing
+  = link_to root_path do
+    .Logo
+      = image_tag 'logo.png',class: 'Logo__image'
+  
+  .Product
+    .Product__image
+      %p.Product__image__title 
+        出品画像 
+        %span
+          必須
+      %p.Product__image__detail 最大4枚までアップロードできます
+      .Product__image__submit クリックしてファイルをアップロード
+      
