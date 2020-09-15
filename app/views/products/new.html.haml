@@ -2,13 +2,54 @@
   = link_to root_path do
     .Logo
       = image_tag 'logo.png',class: 'Logo__image'
+  = form_with model: @product do |f|
+    .Product
+      .Product__image
+        %p.Product__image__title 
+          出品画像 
+          %span
+            必須
+        %p.Product__image__detail 最大4枚までアップロードできます
+        %p.Product__image__submit クリックしてファイルをアップロード
+
+      .Product__name
+        %p.Product__name__title 
+          商品名
+          %span
+            必須
+        = f.text_field :name, class: 'Product__name__text', placeholder: '40文字まで'
+
+      .Product__explanation
+        %p.Product__explanation__title 
+          商品の説明
+          %span
+            必須
+        = f.text_area :details, class: 'Product__explanation__text', placeholder: '商品の説明（必須 1000文字以内）'
+        //文字数カウントはJSで行います。
   
-  .Product
-    .Product__image
-      %p.Product__image__title 
-        出品画像 
-        %span
-          必須
-      %p.Product__image__detail 最大4枚までアップロードできます
-      .Product__image__submit クリックしてファイルをアップロード
-      
+      .Product__detail
+        .Product__detail__title 商品の詳細
+        .Product__detail__category
+          %p.Product__detail__category__title
+            カテゴリー 
+            %span
+              必須
+          .Product__detail__category__select
+            = select_tag '', options_for_select(["選択してください", "レディース", "メンズ"]), {class: 'Product__detail__category__select__form'}
+          
+        .Product__detail__brand
+          %p.Product__detail__brand__title
+            ブランド
+            %span
+              任意
+          = f.text_field :category, class: 'Product__detail__brand__text', placeholder: '例）シャネル'
+        
+        .Product__detail__status
+          %p.Product__detail__status__title
+            商品の状態
+            %span
+              必須
+          .Product__detail__status__select
+            = select_tag '', options_for_select(["選択してください", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]), {class: 'Product__detail__status__select__form'}
+
+
