@@ -44,7 +44,6 @@
             -webkit-box-align: center;
             align-items: center;
             &__box{
-              height: 150px;
               width: 150px;
               border-radius: 4px;
               display: inline-block;
@@ -78,7 +77,96 @@
         border-top: 1px solid #3CCACE;
         max-width: 500px;
         margin: 0 auto;
-        padding: 24px 16px;        
+        padding: 24px 16px;
+        &__money{
+          display: flex;
+          font-size: 18px;
+          font-weight: 600;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          align-items: center;
+        }
+      }
+      &__four{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        &__pay{
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          // margin-bottom: 16px;
+          h3{
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        .Registration{
+          color: rgb(0, 149, 238);
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+          pointer-events: auto;
+          text-decoration: none;
+        }
+      }
+      &__five{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        &__place{
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          // margin-bottom: 16px;
+          h3{
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        .Registration{
+          color: rgb(0, 149, 238);
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+          pointer-events: auto;
+          text-decoration: none;
+        }
+      }
+      &__six{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px 48px;
+        &__purchase{
+          vertical-align: baseline;
+          margin: 0px;
+          padding: 0px;
+          border-width: 0px;
+          border-style: initial;
+          border-color: initial;
+          border-image: initial;
+          font: inherit;
+          p{
+            color: rgb(255, 2, 17);
+            line-height: 1.5;
+            margin-bottom: 24px;
+          }
+          &__botan{
+            background-color: #ccc;
+            color: #888;
+            cursor: default;
+            width: 100%;
+            font-size: 17px;
+            min-height: 48px;
+            padding: 0 24px;
+          }      
+        }
       }
     }
   }

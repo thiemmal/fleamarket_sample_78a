@@ -23,17 +23,31 @@
             支払い金額
           %span
             ￥１０,０００
-        %label
-          %label
-            %span
-              %span
-                %input{type:"text"}
-              %svg
-                %path  
-            %img{src:"https://web-jp-assets.mercdn.net/_next/static/images/icon-d-point-b6fd5f328cf7f7b28fd6e84b1b4062d5.svg", alt:"Docomo Point Icon"}
-            %p
-              -# = link_to "#" do
-        %label
       %section.Purchase__all__menu__four
+        .Purchase__all__menu__four__pay
+          .Purchase__all__menu__four__pay__payOne
+            %h3.Purchase__all__menu__four__pay__payone__payTwo
+              支払い方法
+          = link_to "#", {class:"Registration"} do
+            %svg{"aria-hidden" => "true", :fill => "#0095ee", "fill-rule" => "evenodd", height:"20", viewbox:"0 0 24 24", width:"20"}
+              %path{:d => "M17.51,11.3H12.7v-5a.7.7,0,0,0-1.4,0v5h-5a.7.7,0,0,0,0,1.4h5v4.81a.7.7,0,0,0,1.4,0V12.7h4.81a.7.7,0,0,0,0-1.4Z"}
+              %path{:d => "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
+            %span
+              登録してください
       %section.Purchase__all__menu__five
+        .Purchase__all__menu__five__place
+          .Purchase__all__menu__five__place__placeOne
+            %h3.Purchase__all__menu__five__place__placeone__placeTwo
+              配送先
+          = link_to "#", {class:"Registration"} do
+            %svg{"aria-hidden" => "true", :fill => "#0095ee", "fill-rule" => "evenodd", height:"20", viewbox:"0 0 24 24", width:"20"}
+              %path{:d => "M17.51,11.3H12.7v-5a.7.7,0,0,0-1.4,0v5h-5a.7.7,0,0,0,0,1.4h5v4.81a.7.7,0,0,0,1.4,0V12.7h4.81a.7.7,0,0,0,0-1.4Z"}
+              %path{:d => "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
+            %span
+              登録してください
       %section.Purchase__all__menu__six
+        .Purchase__all__menu__six__purchase
+          %p
+            配送先と支払い方法の入力を完了してください。
+          %button.Purchase__all__menu__six__purchase__botan{"data-test" => "transaction-buy-purchase", disabled:"", tabindex:"-1", type:"button"} 購入する
+
