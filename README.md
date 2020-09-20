@@ -5,14 +5,18 @@
 |email|string|null: false, unique: true|
 |password|string|null: false|
 |nickname|string|null: false, unique: true|
-|gender|string||
+|gender|string|| →消す
 |first_name|string|null: false|
 |family_name|string|null: false|
 |first_furigana|string|null: false|
 |family_furigana|string|null: false|
 |birthday|integer|null: false|
-|recipient受取人名|string||
-|recipient_furigana|string||
+|recipient受取人名|string|| →消す
+|recipient_family_name受取人名字|string||→追加
+|recipient_first_name受取人名前|string||→追加
+|recipient_furigana|string|| →消す
+|recipient_family_furigana受取人名字ふりがな|string||→追加
+|recipient_first_furigana受取人名前ふりがな|string||→追加
 |zip_cord郵便番号|integer|null: false|
 |prefecture都道府県|string|null: false|
 |city市町村|string|null: false|
