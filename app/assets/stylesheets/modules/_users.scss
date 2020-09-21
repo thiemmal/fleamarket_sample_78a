@@ -180,7 +180,7 @@
       &__content {
         width: 100%;
         .content__list {
-          &__link {
+          &__link, &__catalog {
             min-height: 83px;
             width: 700px;
             display: flex;
@@ -223,7 +223,7 @@
               -ms-transform: translate(0, -50%);
               color: black;
             }
-            &__catalog {
+            &__link {
               width: 100%;
               height: 56px;
               margin: 0 auto;
@@ -231,7 +231,14 @@
               color: #333;
               line-height: 56px;
               text-align: center;
+              text-decoration: none;
             }
+            &__link:hover {
+              background-color: #f8f8f8;
+            }
+          }
+          &__link:hover {
+            background-color: #f8f8f8;
           }
         }
       }
