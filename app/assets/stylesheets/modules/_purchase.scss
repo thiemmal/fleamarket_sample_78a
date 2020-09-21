@@ -1,0 +1,173 @@
+.Purchase{
+  width: 100%;
+  margin: 0 auto;
+  &__all{
+    position: relative;
+    min-height: 100%;
+    font-size: 14px;
+    color: rgb(51,51,51);
+    &__menu{
+      position: relative;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 24px 16px;
+      &__one{
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        h2{
+          display: block;
+          text-align: center;
+          font-family: Arial, Helvetica, sans-serif;
+          font-size: 24px;
+          line-height: 24px;
+          font-weight: 600;
+          margin: 0;
+          padding: 0;
+        }
+      }
+      &__two{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        &__gazo{
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          &__left{
+            display: flex;
+            -webkit-box-pack: center;
+            justify-content: center;
+            height: 150px;
+            width: 150px;
+            -webkit-box-align: center;
+            align-items: center;
+            &__box{
+              width: 150px;
+              border-radius: 4px;
+              display: inline-block;
+              margin: 0;
+              overflow: hidden;
+            }
+          }
+          &__right{
+            width: 100%;
+            margin-left: 20px;
+            .name{
+              font-size: 25px;
+              line-height: 1.4em;
+              margin-bottom: 8px;
+            }
+            .kakaku{
+              text-align: right;
+              .mozi{
+                font-size: 15px;
+              }
+              .suuzi{
+                font-size: 20px;
+                font-weight: 600;
+                margin-left: 8px;
+              }
+            }
+          }
+        }
+      }
+      &__three{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        &__money{
+          display: flex;
+          font-size: 18px;
+          font-weight: 600;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          -webkit-box-align: center;
+          align-items: center;
+        }
+      }
+      &__four{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        &__pay{
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          // margin-bottom: 16px;
+          h3{
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        .Registration{
+          color: rgb(0, 149, 238);
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+          pointer-events: auto;
+          text-decoration: none;
+        }
+      }
+      &__five{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px;
+        &__place{
+          display: flex;
+          -webkit-box-pack: justify;
+          justify-content: space-between;
+          // margin-bottom: 16px;
+          h3{
+            font-size: 18px;
+            font-weight: 600;
+          }
+        }
+        .Registration{
+          color: rgb(0, 149, 238);
+          display: flex;
+          -webkit-box-align: center;
+          align-items: center;
+          opacity: 1;
+          pointer-events: auto;
+          text-decoration: none;
+        }
+      }
+      &__six{
+        border-top: 1px solid #3CCACE;
+        max-width: 500px;
+        margin: 0 auto;
+        padding: 24px 16px 48px;
+        &__purchase{
+          vertical-align: baseline;
+          margin: 0px;
+          padding: 0px;
+          border-width: 0px;
+          border-style: initial;
+          border-color: initial;
+          border-image: initial;
+          font: inherit;
+          p{
+            color: rgb(255, 2, 17);
+            line-height: 1.5;
+            margin-bottom: 24px;
+          }
+          &__botan{
+            background-color: #ccc;
+            color: #888;
+            cursor: default;
+            width: 100%;
+            font-size: 17px;
+            min-height: 48px;
+            padding: 0 24px;
+          }      
+        }
+      }
+    }
+  }
+}
