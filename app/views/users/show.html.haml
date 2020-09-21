@@ -1,85 +1,160 @@
 .main-field
   .side-field
     .side-field__top
-      %ui.side-field__top__list
-        %li.side-field__top__list__content
-          = link_to "#" do
-            .side-field__top__list__content__left
+      %ui.list
+        %li
+          = link_to "#", class:"list__content-active" do
+            .list__content-active__left
               マイページ
-            .side-field__top__list__content__right
+            .list__content-active__right
               = icon("fas", "chevron-right")
-        %li.side-field__top__list__content
-          = link_to "#" do
-            .side-field__top__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               お知らせ
-            .side-field__top__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-        %li.side-field__top__list__content
-          = link_to "#" do
-            .side-field__top__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               やることリスト
-            .side-field__top__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-        %li.side-field__top__list__content
-          = link_to "#" do
-            .side-field__top__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               いいね！一覧
-            .side-field__top__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-        %li.side-field__top__list__content
-          = link_to "#" do
-            .side-field__top__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               出品する
-            .side-field__top__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
 
     .side-field__middle
-      %h1
+      %h3
         フリペイ
-      %ui.side-field__middle__liset
-        %li.side-field__middle__list__content
-          = link_to "#" do
-            .side-field__middle__list__content__left
+      %ui.list
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               残高・振込申請
-            .side-field__middle__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-        %li.side-field__middle__list__content
-          = link_to "#" do
-            .side-field__middle__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               ポイント
-            .side-field__middle__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
 
     .side-field__end
-      %h1
+      %h3
         設定
-      %ui.side-field__end__liset
-        %li.side-field__end__list__content
-          = link_to "#" do
-            .side-field__end__list__content__left
+      %ui.list
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               プロフィール
-            .side-field__end__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-      %ui.side-field__end__liset
-        %li.side-field__end__list__content
-          = link_to "#" do
-            .side-field__end__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               支払い変更
-            .side-field__end__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-      %ui.side-field__end__liset
-        %li.side-field__end__list__content
-          = link_to "#" do
-            .side-field__end__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               本人情報
-            .side-field__end__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
-      %ui.side-field__end__liset
-        %li.side-field__end__list__content
-          = link_to "#" do
-            .side-field__end__list__content__left
+        %li
+          = link_to "#", class:"list__content" do
+            .list__content__left
               ログアウト
-            .side-field__end__list__content__right
+            .list__content__right
               = icon("fas", "chevron-right")
      
   .content-field
+    .content-field__top
+      .content-field__top__user
+        = link_to "#", class:"content-field__top__user__link" do
+          .content-field__top__user__link__icon
+            =image_tag(src= "beef.jpeg", class: "content-field__top__user__link__icon__image")
+          %h2.content-field__top__user__link__name
+            田中
+          .content-field__top__user__link__number
+            .content-field__top__user__link__number__left
+              評価
+            .content-field__top__user__link__number__value
+              30
+            .content-field__top__user__link__number__right
+              出品数
+            .content-field__top__user__link__number__value
+              60
+
+    .content-field__end
+      %h2.content-field__end__head
+        購入した商品
+      %ui.content-field__end__tabs
+        %li
+          = link_to "#", class:"content-field__end__tabs__tab-active" do
+            取引中
+        %li
+          = link_to "#", class:"content-field__end__tabs__tab" do
+            過去の取引
+      .content-field__end__content
+        %ul.content__list
+          %li
+            = link_to "#", class:"content__list__link" do
+              =image_tag(src= "a004.png", class: "content__list__link__image")
+              .content__list__link__center
+                .content__list__link__center__top
+                  お肉
+                .content__list__link__center__end
+                  取引完了
+              .content__list__link__right
+                = icon("fas", "chevron-right")
+          %li
+            = link_to "#", class:"content__list__link" do
+              =image_tag(src= "a004.png", class: "content__list__link__image")
+              .content__list__link__center
+                .content__list__link__center__top
+                  お肉
+                .content__list__link__center__end
+                  取引完了
+              .content__list__link__right
+                = icon("fas", "chevron-right")
+          %li
+            = link_to "#", class:"content__list__link" do
+              =image_tag(src= "a004.png", class: "content__list__link__image")
+              .content__list__link__center
+                .content__list__link__center__top
+                  お肉
+                .content__list__link__center__end
+                  取引完了
+              .content__list__link__right
+                = icon("fas", "chevron-right")
+          %li
+            = link_to "#", class:"content__list__link" do
+              =image_tag(src= "a004.png", class: "content__list__link__image")
+              .content__list__link__center
+                .content__list__link__center__top
+                  お肉
+                .content__list__link__center__end
+                  取引完了
+              .content__list__link__right
+                = icon("fas", "chevron-right")
+          %li
+            = link_to "#", class:"content__list__link" do
+              .content__list__link__catalog
+                一覧を見る
+
+= link_to '#' do
+  .Exhibition-btn
+    .Exhibition-btn__name 出品する
+    =image_tag(src= "icon_camera.png", class: "Exhibition-btn__image")
