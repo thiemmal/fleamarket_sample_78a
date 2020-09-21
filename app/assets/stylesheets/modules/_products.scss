@@ -258,7 +258,7 @@
     }
     &__lists{
       width: 780px;
-      margin: 26px auto;
+      margin: 26px auto 0 auto;
       display: flex;
       justify-content: space-around;
       a{
@@ -313,6 +313,34 @@
             }
           }
         }
+      }
+    }
+  }
+  .Download{
+    background-image: image-url("bg-appBanner-pict.jpg");
+    background-size: cover;
+    padding: 90px 40px;
+    background-position: center;
+    &__message{
+      color: #fff;
+      text-align: center;
+      &__upper{
+        font-size: 23px;
+        font-weight: bold;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+      &__lower{
+        font-size: 35px;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+      }
+    }
+    &__link{
+      text-align: center;
+      &__apple{
+        @include apple-btn;
+      }
+      &__google{
+        @include google-btn;
       }
     }
   }

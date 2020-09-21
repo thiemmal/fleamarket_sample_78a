@@ -1,3 +1,4 @@
+=render 'shared/header'
 .Top-page
   .Image
     .Image__content
@@ -146,9 +147,19 @@
             .Product__lists__set__content__star 
               = icon("fa", "star")
               .Product__lists__set__content__star__Evaluation 1
+  
+  .Download
+    .Download__message
+      .Download__message__upper だれでもかんたん、人生を変えるフリマアプリ
+      .Download__message__lower 今すぐ無料ダウンロード！
+    .Download__link
+      = link_to image_tag(src= "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "Middle__content__link__apple"), "#"
+      = link_to image_tag(src= "google-play-badge.png", class: "Middle__content__link__google"), "#"
 
 
-= link_to '#' do
+= link_to new_product_path do
   .Exhibition-btn
     .Exhibition-btn__name 出品する
     =image_tag(src= "icon_camera.png", class: "Exhibition-btn__image")
+
+=render 'shared/footer'
