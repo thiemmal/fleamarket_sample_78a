@@ -1,50 +1,40 @@
 .AccountPage {
-  width: 980px;
-  margin: 60px auto;
-  padding: 60px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 5px;
-  display: flex;
-  justify-content: space-between;
-}
-.AccountPage__title {
-  width: 50%;
-  font-size: 14px;
-  font-weight: 200;
-
-  h2 {
-    margin-bottom: 10px;
-    letter-spacing: 3px;
-    font-size: 40px;
-    &:after {
-      content: "";
-      display: block;
-      width: 60px;
-      margin-top: 5px;
-      border-bottom: 1px solid #38aef0;
+  background-color: #EEEEEE;
+  .Logo{
+    height: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    &__image{
+      margin-top: 30px;
+      height: 65px;
+      width: 250px;
     }
   }
-
-  .Button {
-    margin-top: 40px;
-    color: #fff;
-    background-color: #ccc;
-  }
+}
+.AccountPage__form {
+  width: 700px;
+  margin: 0 auto;
+  background-color: #fff;
+  height: 100%;
+  padding:10px 40px 40px 40px;
+  font-family: 'Source Sans Pro', Helvetica , Arial, '游ゴシック体', 'YuGothic', 'メイリオ', 'Meiryo', sans-serif;
 }
 
-.AccountPage__form {
-  width: 50%;
+.Forms {
+  max-width: 343px;
+  margin: 0 auto;
 }
 
 .FormField {
-  margin-bottom: 10px;
-
+  margin-bottom: 20px;
+  
   &__label--mormal {
     padding: 10px 0;
     letter-spacing: 1px;
     font-size: 14px;
-    font-weight: 200;
+    text-decoration: inherit;
+    vertical-align: inherit;
+    font-weight: 600;
     i {
       font-size: 11px;
     }
@@ -53,19 +43,23 @@
       color: #d65f4c;
       font-weight: 400;
     }
-    &__require {
-      background: #ea352d;
-      margin: 0 0 0 8px;
-      padding: 2px 4px;
-      border-radius: 2px;
-      color: #fff;
-      font-size: 12px;
-      vertical-align: top;
-    }
   }
+  &__label__require {
+    background: #ea352d;
+    margin: 0 0 0 8px;
+    padding: 2px 4px;
+    border-radius: 2px;
+    color: #fff;
+    font-size: 12px;
+    vertical-align: top;
+  }
+
   &__input--normal {
+    margin: 8px 0 0;
+    height: 48px;
     input {
       box-sizing: border-box;
+      border: 1px solid #ccc;
       width: 100%;
       padding: 10px;
       letter-spacing: 1px;
@@ -87,6 +81,18 @@
   }
 }
 
+
+h2 {
+  font-size: 22px;
+  padding: 32px;
+  text-align: center;
+  color: #3CCACE;
+  display: block;
+  font-size: 1.5em;
+
+  font-weight: 600;
+}
+
 .Button {
   display: inline-block;
   height: 50px;
@@ -102,7 +108,7 @@
 .UserButton {
   margin-top: 20px;
   color: #fff;
-  background-color: #38aef0;
+  background-color: #3CCACE;
 }
 
 #error_explanation {
@@ -126,6 +132,6 @@
   li {
     margin: 0;
     padding: 0;
-    font-size: 13px;
+    font-size: 10px;
   }
 }
