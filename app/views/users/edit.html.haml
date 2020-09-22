@@ -2,9 +2,9 @@
   = link_to root_path do
     .Logo
       = image_tag 'logo.png',class: 'Logo__image'
-
+  
   .AccountPage__form
-    = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = form_for(current_user) do |f|
       = devise_error_messages!
       .Forms
         %h2 ユーザー情報
@@ -37,46 +37,7 @@
             %br/
           .FormField__input--normal
             = f.password_field :password_confirmation, autocomplete: "off"
-        %h2  本人確認情報
-        .FormField
-          .FormField__label--normal
-            = f.label :family_name, "名字(全角)"
-            %span.FormField__label__require 必須
-            %br/
-          .FormField__input--normal
-            = f.text_field :family_name, placeholder: "例)三浦"
-        .FormField
-          .FormField__label--normal
-            = f.label :first_name, "名前(全角)"
-            %span.FormField__label__require 必須
-            %br/
-          .FormField__input--normal
-            = f.text_field :first_name, placeholder: "例)卓人"
-
-        .FormField
-          .FormField__label--normal
-            = f.label :family_furigana, "名字(全角ふりがな)"
-            %span.FormField__label__require 必須
-            %br/
-          .FormField__input--normal
-            = f.text_field :family_furigana, placeholder: "例)みうら"
-        .FormField
-          .FormField__label--normal
-            = f.label :first_furigana, "名前(全角ふりがな)"
-            %span.FormField__label__require 必須
-            %br/
-          .FormField__input--normal
-            = f.text_field :first_furigana, placeholder: "例)たくと"
-
-        .FormField
-          .FormField__label--normal
-            = f.label :birthday,"生年月日"
-            %span.FormField__label__require 必須
-            %br/
-          .FormField__input--normal
-            = f.text_field :birthday, placeholder: "例) 19900728"
-
-        %h2 お届け先情報
+        %h2 本人確認情報
         .FormField
           .FormField__label--normal
             = f.label :recipient_family_name, "受取人名字(全角)"
@@ -84,6 +45,47 @@
             %br/
           .FormField__input--normal
             = f.text_field :recipient_family_name, placeholder: "例)吉澤"
+        .FormField
+          .FormField__label--normal
+            = f.label :recipient_first_name, "受取人名前(全角)"
+            %span.FormField__label__require 必須
+            %br/
+          .FormField__input--normal
+            = f.text_field :recipient_first_name, placeholder: "例)賢祐"
+
+        .FormField
+          .FormField__label--normal
+            = f.label :recipient_family_furigana, "受取人名字(全角ふりがな)"
+            %span.FormField__label__require 必須
+            %br/
+          .FormField__input--normal
+            = f.text_field :recipient_family_furigana, placeholder: "例)よしざわ"
+        .FormField
+          .FormField__label--normal
+            = f.label :recipient_first_furigana, "受取人名前(全角ふりがな)"
+            %span.FormField__label__require 必須
+            %br/
+          .FormField__input--normal
+            = f.text_field :recipient_first_furigana, placeholder: "例)けんすけ"
+
+        .FormField
+          .FormField__label--normal
+            = f.label :birthday,"生年月日"
+            %span.FormField__label__require 必須
+            %br/           
+            = raw sprintf(f.date_select(:birthday, autofocus: true, prompt:"--",use_month_numbers: true, start_year:Time.now.year,end_year:(1900),date_separator:'%s'), '年 ', '月 ') + '日' 
+            = icon 'fas', 'chevron-down',class:"FormField__icon1"
+            = icon 'fas', 'chevron-down',class:"FormField__icon2"
+            = icon 'fas', 'chevron-down',class:"FormField__icon3"
+            
+        %h2 お届け先情報
+        .FormField
+          .FormField__label--normal
+            = f.label :recipient_family_name, "受取人名字(全角)"
+            %span.FormField__label__require 必須
+            %br/
+          .FormField__input--normal
+            = f.text_field :family_name, placeholder: "例)吉澤"
         .FormField
           .FormField__label--normal
             = f.label :recipient_first_name, "受取人名前(全角)"
@@ -145,6 +147,5 @@
             = f.label :tel, "お届け先の電話番号"
           .FormField__input--normal
             = f.text_field :tel
-        
-        .actions
-          = f.submit "アカウント作成", class: 'Button UserButton'
+
+        = f.submit "更新", class: 'Button UserButton'

@@ -10,10 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_04_181403) do
+ActiveRecord::Schema.define(version: 2020_09_21_123600) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
@@ -21,15 +20,6 @@ ActiveRecord::Schema.define(version: 2020_09_04_181403) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.string "name", null: false
-    t.integer "user_id"
-    t.integer "category_id"
-    t.text "details"
-    t.string "condition"
-    t.string "fee_side"
-    t.string "origin"
-    t.string "days"
-    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -43,20 +33,21 @@ ActiveRecord::Schema.define(version: 2020_09_04_181403) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "nickname", null: false
-    t.string "gender"
     t.string "first_name", null: false
     t.string "family_name", null: false
     t.string "first_furigana", null: false
     t.string "family_furigana", null: false
     t.integer "birthday", null: false
-    t.string "recipient"
-    t.string "recipient_furigana"
     t.integer "zip_cord", null: false
     t.string "prefecture", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "mansion", null: false
     t.integer "tel"
+    t.string "recipient_family_name"
+    t.string "recipient_first_name"
+    t.string "recipient_family_furigana"
+    t.string "recipient_first_furigana"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
