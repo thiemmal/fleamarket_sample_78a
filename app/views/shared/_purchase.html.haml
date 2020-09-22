@@ -1,0 +1,53 @@
+.Purchase
+  .Purchase__all
+    .Purchase__all__menu
+      %section.Purchase__all__menu__one
+        %h2
+          購入内容確認
+      %section.Purchase__all__menu__two
+        .Purchase__all__menu__two__gazo
+          .Purchase__all__menu__two__gazo__left
+            %figure.Purchase__all__menu__two__gazo__left__box
+              = image_tag src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG" , alt: "beef"
+          .Purchase__all__menu__two__gazo__right
+            %p.name
+              ビーフ
+            %p.kakaku
+              %span.mozi
+                送料込み (税込)
+              %span.suuzi
+                ￥１０,０００
+      %section.Purchase__all__menu__three
+        .Purchase__all__menu__three__money
+          %span
+            支払い金額
+          %span
+            ￥１０,０００
+      %section.Purchase__all__menu__four
+        .Purchase__all__menu__four__pay
+          .Purchase__all__menu__four__pay__payOne
+            %h3.Purchase__all__menu__four__pay__payone__payTwo
+              支払い方法
+          = link_to "#", {class:"Registration"} do
+            %svg{"aria-hidden" => "true", :fill => "#0095ee", "fill-rule" => "evenodd", height:"20", viewbox:"0 0 24 24", width:"20"}
+              %path{:d => "M17.51,11.3H12.7v-5a.7.7,0,0,0-1.4,0v5h-5a.7.7,0,0,0,0,1.4h5v4.81a.7.7,0,0,0,1.4,0V12.7h4.81a.7.7,0,0,0,0-1.4Z"}
+              %path{:d => "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
+            %span
+              登録してください
+      %section.Purchase__all__menu__five
+        .Purchase__all__menu__five__place
+          .Purchase__all__menu__five__place__placeOne
+            %h3.Purchase__all__menu__five__place__placeone__placeTwo
+              配送先
+          = link_to "#", {class:"Registration"} do
+            %svg{"aria-hidden" => "true", :fill => "#0095ee", "fill-rule" => "evenodd", height:"20", viewbox:"0 0 24 24", width:"20"}
+              %path{:d => "M17.51,11.3H12.7v-5a.7.7,0,0,0-1.4,0v5h-5a.7.7,0,0,0,0,1.4h5v4.81a.7.7,0,0,0,1.4,0V12.7h4.81a.7.7,0,0,0,0-1.4Z"}
+              %path{:d => "M12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18.6A8.6,8.6,0,1,1,20.6,12,8.61,8.61,0,0,1,12,20.6Z"}
+            %span
+              登録してください
+      %section.Purchase__all__menu__six
+        .Purchase__all__menu__six__purchase
+          %p
+            配送先と支払い方法の入力を完了してください。
+          %button.Purchase__all__menu__six__purchase__botan{"data-test" => "transaction-buy-purchase", disabled:"", tabindex:"-1", type:"button"} 購入する
+
