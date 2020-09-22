@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_09_21_123600) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.string "ancestry"
@@ -20,6 +21,15 @@ ActiveRecord::Schema.define(version: 2020_09_21_123600) do
   end
 
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.integer "user_id"
+    t.integer "category_id"
+    t.text "details"
+    t.string "condition"
+    t.string "fee_side"
+    t.string "origin"
+    t.string "days"
+    t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
