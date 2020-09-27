@@ -2,7 +2,7 @@
   = link_to root_path do
     .Logo
       = image_tag 'logo.png',class: 'Logo__image'
-  = form_with model: @product do |f|
+  = form_with(model: @product, local: true) do |f|
     .Product
       .Product__image
         %p.Product__image__title 
@@ -10,7 +10,9 @@
           %span
             必須
         %p.Product__image__detail 最大4枚までアップロードできます
-        %p.Product__image__submit クリックしてファイルをアップロード
+        = f.fields_for :images, @product.images.build do |i|
+          = i.file_field :url, class: 'Product__image__submit'
+
 
       .Product__name
         %p.Product__name__title 
@@ -95,7 +97,7 @@
               必須
           %span{class: "Product__price__sale__symbol"}
             ¥
-          = f.text_field :category, class: 'Product__price__sale__form', placeholder: '0'
+          = f.text_field :price, class: 'Product__price__sale__form', placeholder: '0'
         .Product__price__fee
           .Product__price__fee__title 販売手数料 (10%)
           //JSで実装する
