@@ -38,10 +38,6 @@ class ProductsController < ApplicationController
   def edit
   end
 
-  def new
-    @parents = Category.all.order("id ASC").limit(13)
-  end
-
   private
   def move_to_index
     unless user_signed_in?
