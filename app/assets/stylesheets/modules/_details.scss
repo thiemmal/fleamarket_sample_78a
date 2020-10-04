@@ -287,6 +287,31 @@ img{
           }
         }
       }
+      &__topCont__action{
+        padding: 24px;
+        background-color: #fff;
+        margin: 10px 0;
+        text-align: center;
+        &__edit{
+          background-color: #3CCACE;
+          color: #fff;
+          height: 48px;
+          border-radius: 6px;
+          margin-bottom: 12px;
+          line-height: 250%;
+        }
+        &__delet{
+          background-color: #cccccc;
+          color: #fff;
+          height: 48px;
+          border-radius: 6px;
+          margin-top: 12px;
+          line-height: 250%;
+        }
+        ul.action ,a{
+          text-decoration: none;
+        }
+      }
       &__topCont__comeBox{
         padding: 24px;
         background-color: #fff;

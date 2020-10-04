@@ -29,7 +29,7 @@
       .Main__show__contRight__topCont
         .Main__show__contRight__topCont__itemBox
           %h2.Main__show__contRight__topCont__itemBox__name
-            テスト
+            = @product.name
           .Main__show__contRight__topCont__itemBox__body
             %ul
               %li
@@ -39,14 +39,14 @@
                     = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG", size: "75x75"
           .Main__show__contRight__topCont__itemBox__price
             %span
-              ¥10000
+              = "¥" + @product.price.to_s(:delimited)
             .Main__show__contRight__topCont__itemBox__price__tail
               %span
                 （税込）
               %span
-                送料込み  
+                =  @product.fee_side
           .Main__show__contRight__topCont__itemBox__detail
-            テストテストテストテスト
+            =  @product.details
           .Main__show__contRight__topCont__itemBox__table
             %table
               %tbody
@@ -54,7 +54,7 @@
                   %th
                     出品者
                   %td
-                    あああ
+                    =  @product.user.nickname
                 %tr
                   %th
                     カテゴリー
@@ -81,23 +81,23 @@
                   %th
                     商品の状態
                   %td
-                    新品/未使用
+                    =  @product.condition
                 %tr
                   %th
                     配送料の負担
                   %td
-                    送料込み（出品者負担）
+                    =  @product.fee_side #（出品者負担）
                 %tr
                   %th
                     発送元の地域
                   %td
                     = link_to "#" do
-                      北海道
+                      =  @product.origin
                 %tr
                   %th
                     発送日の目安
                   %td
-                    1-2日で発送
+                    =  @product.days
           .Main__show__contRight__topCont__itemBox__aria
             %ul
               %li{class:"optionalBtn likeBtn",id:"likeBtn"}
@@ -108,6 +108,16 @@
                 = link_to "#" do
                   %i{class:"fa fa-flag"}
                     不適切な商品の通報
+        .Main__show__contRight__topCont__action
+          %ul.action
+            = link_to "#" do
+              %li.Main__show__contRight__topCont__action__edit
+                商品の編集
+            %li
+              or
+            = link_to "#" do
+              %li.Main__show__contRight__topCont__action__delet
+                商品の削除
         .Main__show__contRight__topCont__comeBox
           %ul.comeCon
           %form{class:"new_comment", id:"new_comment",action:"#", acceptcharset:"UTF-8"}
