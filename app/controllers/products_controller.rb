@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.last(5)
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def new
@@ -35,7 +36,10 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    
+  end
+
+  def new
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   private
