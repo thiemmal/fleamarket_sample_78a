@@ -43,9 +43,7 @@
         margin-top: 7px;
       }
       &__submit{
-        height: 80px;
-        width: 100%;
-        background-color: bisque;
+        height: 100px;
       }
     }
     
@@ -152,22 +150,6 @@
       }
       &__burden{
         margin-top: 20px;
-        &__title{
-          font-size: 15px;
-          span{
-            @include span;
-          }
-        }
-        &__select{
-          margin-top: 15px;
-          &__form{
-            width: 100%;
-            height: 50px;
-          }
-        }
-      }
-      &__method{
-        margin-top: 30px;
         &__title{
           font-size: 15px;
           span{
