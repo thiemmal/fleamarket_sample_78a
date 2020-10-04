@@ -5,6 +5,21 @@ class ProductsController < ApplicationController
     @parents = Category.all.order("id ASC").limit(13)
   end
 
+  def new
+    @product = Product.new
+    @product.images.new
+
+  end
+
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   def show
   end
 
@@ -21,4 +36,8 @@ class ProductsController < ApplicationController
       redirect_to action: :index
     end
   end
+  def product_params
+    params.require(:product).permit(:name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url]).merge(user_id: current_user.id)
+  end
+
 end
