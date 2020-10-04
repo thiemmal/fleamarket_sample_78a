@@ -9,11 +9,14 @@
           出品画像 
           %span
             必須
+        #previews
+          #image-select-btn
+            image select
         %p.Product__image__detail 最大4枚までアップロードできます
-        = f.fields_for :images, @product.images.build do |i|
-          = i.file_field :url, class: 'Product__image__submit'
-
-
+        #image-file-fileds
+          = f.fields_for :images, @product.images.build do |i|
+            = i.file_field :url, class: 'Product__image__submit',data:{index: i.index}          
+      
       .Product__name
         %p.Product__name__title 
           商品名
