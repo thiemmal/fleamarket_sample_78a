@@ -2,7 +2,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    
+    @products = Product.last(5)
   end
 
   def new
@@ -18,6 +18,11 @@ class ProductsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    product = Product.find(params[:id])
+    product.destroy
   end
 
   def show
