@@ -2,6 +2,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
+    @products = Product.last(5)
     @parents = Category.all.order("id ASC").limit(13)
   end
 
@@ -20,7 +21,18 @@ class ProductsController < ApplicationController
     end
   end
 
+  def destroy
+    product = Product.find(params[:id])
+    if product.user_id == current_user.id
+      if product.destroy
+      else
+        redirect_to root_path, alert: "削除が失敗しました"
+      end
+    end
+  end
+
   def show
+    @product = Product.find(params[:id])
   end
 
   def edit
