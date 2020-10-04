@@ -116,7 +116,7 @@
                   商品の編集
               %li
                 or
-              = link_to product_path(@product.id), method: :delete do
+              = link_to product_path(@product.id), method: :delete, data: { confirm: '削除しますか？' } do
                 %li.Main__show__contRight__topCont__action__delete
                   商品の削除
 

@@ -22,7 +22,12 @@ class ProductsController < ApplicationController
 
   def destroy
     product = Product.find(params[:id])
-    product.destroy
+    if product.user_id == current_user.id
+      if product.destroy
+      else
+        redirect_to root_path, alert: "削除が失敗しました"
+      end
+    end
   end
 
   def show
