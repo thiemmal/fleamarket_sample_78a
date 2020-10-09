@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
+  before_action :set_parents
 
   def index
     @products = Product.last(5)
-    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def new
@@ -39,13 +39,19 @@ class ProductsController < ApplicationController
   end
 
   private
+  
   def move_to_index
     unless user_signed_in?
       redirect_to action: :index
     end
   end
+
   def product_params
     params.require(:product).permit(:name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url]).merge(user_id: current_user.id)
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
   end
 
 end
