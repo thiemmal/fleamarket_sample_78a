@@ -25,6 +25,19 @@ ja:
         unconfirmed_email: 未確認Eメール
         unlock_token: ロック解除用トークン
         updated_at: 更新日
+        family_name: 名字(全角)
+        first_name: 名前(全角)
+        family_furigana: 名字(全角ふりがな)
+        first_furigana: 名前(全角ふりがな)
+        birthday: 生年月日
+        recipient_family_name: 受取人名字(全角)
+        recipient_first_name: 受取人名前(全角)
+        recipient_family_furigana: 受取人名字(全角ふりがな)
+        recipient_first_furigana: 受取人名前(全角ふりがな)
+        zip_cord: 郵便番号
+        prefecture: 都道府県
+        city: 市区町村
+        address: 番地
     models:
       user: ユーザ
   devise:
