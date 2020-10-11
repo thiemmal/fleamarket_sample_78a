@@ -2,7 +2,6 @@ class ProductsController < ApplicationController
   before_action :move_to_index, except: [:index, :show]
 
   def index
-    
   end
 
   def new
@@ -35,6 +34,6 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url]).merge(user_id: current_user.id)
+    params.require(:product).permit(:name, :details, :price, :prefecture_id,:condition_id, :fee_side,:days_id, images_attributes: [:url]).merge(user_id: current_user.id)
   end
 end
