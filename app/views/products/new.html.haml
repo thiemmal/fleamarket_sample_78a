@@ -9,10 +9,20 @@
           出品画像 
           %span
             必須
-        %p.Product__image__detail 最大4枚までアップロードできます
-        = f.fields_for :images, @product.images.build do |i|
-          = i.file_field :url, class: 'Product__image__submit'
-
+        #previews
+          #image-select-btn
+            image select
+        #delete_button_field
+        %p.Product__image__detail 最大5枚までアップロードできます
+        #image-file-fileds
+          = f.fields_for :images, @product.images.build do |i|
+            = i.file_field :url, class: 'Product__image__submit',data:{index: i.index}
+            - if @product.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @product.persisted?
+            .js-file_group{"data-index" => "#{@product.images.count}"}
+            = file_field_tag :url, name: "product[images_attributes][#{@product.images.count}][url]", class: 'js-file'
+            .js-remove 削除
 
       .Product__name
         %p.Product__name__title 
@@ -53,7 +63,7 @@
               必須
           .Product__detail__status__select
             = select_tag '', options_for_select(["選択してください", "新品、未使用", "未使用に近い", "目立った傷や汚れなし", "やや傷や汚れあり", "傷や汚れあり", "全体的に状態が悪い"]), {class: 'Product__detail__status__select__form'}
-      
+
       .Product__delivery
         .Product__delivery__title 商品の配送
         .Product__delivery__burden 

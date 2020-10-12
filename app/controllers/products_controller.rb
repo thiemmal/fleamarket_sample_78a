@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
   def new
     @product = Product.new
     @product.images.new
-
+    @parents = Category.all.order("id ASC").limit(13)
   end
 
   def create
@@ -48,6 +48,9 @@ class ProductsController < ApplicationController
 
   def product_params
     params.require(:product).permit(:name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url]).merge(user_id: current_user.id)
+  end
+  def set_product
+    @product = Product.find(params[:id])
   end
 
   def set_parents
