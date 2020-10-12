@@ -22,12 +22,7 @@
             .js-file_group{"data-index" => "#{@product.images.count}"}
             = file_field_tag :url, name: "product[images_attributes][#{@product.images.count}][url]", class: 'js-file'
             .js-remove 削除
-        
-       
-            
 
-
-      
       .Product__name
         %p.Product__name__title 
           商品名

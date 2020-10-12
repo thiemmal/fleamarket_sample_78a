@@ -7,7 +7,7 @@ $(function(){
                     <input class="js-file" type="file"
                     name="product[images_attributes][${num}][url]"
                     id="product_images_attributes_${num}_url" data-index="${num}" ><br>
-                    <div class="js-remove"id="delete_btn_${num}">削除</div>
+                    
                   </div>`;
     return html;
   }
@@ -18,11 +18,17 @@ $(function(){
     return html;
   }
 
+  const deletebtn = (index, url)=> {
+    const html = `<div class="js-remove"id="delete_btn_${index}" data-index="${index}">削除</div>`;
+    return html
+  }
+
   $('#image-select-btn').on('click', function(e) {
     console.log("click");
     const fileFields = $('input[type="file"]:last');
     fileFields.trigger('click');
   });
+
 
   $('.hidden-destroy').hide();
 
@@ -36,19 +42,26 @@ $(function(){
     let targetIndex = $(this).data('index');
 
     $('#image-select-btn').before(buildImg(targetIndex, blobUrl));
+
+    $('#image-select-btn').after(deletebtn(targetIndex, blobUrl));
+    // after, before, prepend, append
+
     
     $('#image-file-fileds').append(buildFileField(targetIndex+1));
 
   });
 
-  $('#image-file-fileds').on('click', '.js-remove', function() {
-    const targetIndex = $(this).parent().data('index');
+  $('#previews').on('click', '.js-remove', function() {
+    const targetIndex = $(this).data('index');
     // 該当indexを振られているチェックボックスを取得する
+    console.log(targetIndex)
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
+
+    $(`#product_images_attributes_${targetIndex}_url`).remove()
     // もしチェックボックスが存在すればチェックを入れる
     if (hiddenCheck) hiddenCheck.prop('checked', true);
 
-    $(this).parent().remove();
+    $(this).remove();
     
     $(`img[data-index="${targetIndex}"]`).remove();
 
@@ -58,3 +71,6 @@ $(function(){
   
 
 });
+
+
+

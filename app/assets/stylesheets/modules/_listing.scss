@@ -45,6 +45,7 @@
       &__submit{
         height: 80px;
         width: 100%;
+        display: none;
       }
     }
     
@@ -285,6 +286,7 @@
   height: 200px; 
   display:flex; 
   overflow: hidden
+  
 }
 #image-select-btn{
   width:100%; 
@@ -292,4 +294,13 @@
   background-color:gray; 
   border:solid 4px red; 
   cursor: pointer
+}
+.js-file{
+  display: none;
+}
+
+.js-remove{
+  background-color: lawngreen;
+  align-items: center;
+  // display: block;
 }
