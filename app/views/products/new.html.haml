@@ -12,6 +12,7 @@
         #previews
           #image-select-btn
             image select
+        #delete_button_field
         %p.Product__image__detail 最大5枚までアップロードできます
         #image-file-fileds
           = f.fields_for :images, @product.images.build do |i|

@@ -1,5 +1,4 @@
 $(function(){
-  console.log('item.js');
 
   // 画像用のinputを生成する関数
   const buildFileField = (num)=> {
@@ -24,7 +23,6 @@ $(function(){
   }
 
   $('#image-select-btn').on('click', function(e) {
-    console.log("click");
     const fileFields = $('input[type="file"]:last');
     fileFields.trigger('click');
   });
@@ -33,28 +31,27 @@ $(function(){
   $('.hidden-destroy').hide();
 
   $('#image-file-fileds').on('change', 'input[type="file"]', function(e) {
-    console.log(this);
     // const targetIndex = $(this).parent().data('index');
     // ファイルのブラウザ上でのURLを取得する
     const file = e.target.files[0];
     const blobUrl = window.URL.createObjectURL(file);
-    console.log("Blob:", blobUrl);
     let targetIndex = $(this).data('index');
 
     $('#image-select-btn').before(buildImg(targetIndex, blobUrl));
 
-    $('#image-select-btn').after(deletebtn(targetIndex, blobUrl));
+    // $('#previews').after(deletebtn(targetIndex, blobUrl));
     // after, before, prepend, append
+    $('#delete_button_field').append(deletebtn(targetIndex, blobUrl));
+    
 
     
     $('#image-file-fileds').append(buildFileField(targetIndex+1));
 
   });
 
-  $('#previews').on('click', '.js-remove', function() {
+  $('.Product__image').on('click', '.js-remove', function() {
     const targetIndex = $(this).data('index');
     // 該当indexを振られているチェックボックスを取得する
-    console.log(targetIndex)
     const hiddenCheck = $(`input[data-index="${targetIndex}"].hidden-destroy`);
 
     $(`#product_images_attributes_${targetIndex}_url`).remove()
