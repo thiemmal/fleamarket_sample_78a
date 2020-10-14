@@ -16,10 +16,22 @@
     .Mokuji
       %ul.Mokuji__themeLeft
         %li.Mokuji__themeLeft__item.Mokuji__themeLeft__item--one
-          = link_to "#" , id:"cateBtn"do
+          = link_to categories_path, id: 'categoBtn' do
             カテゴリー
+          #tree_menu
+            %ul.categoryTree
+              - @parents.each do |parent|
+                %li.category_parent
+                  = link_to category_path(parent) do
+                    %input{type: "button", value: "#{parent.name}", name: "#{parent.id}", class: "parent_btn"}
+              %li.category_parent
+                = link_to categories_path do
+                  %input{type: "button", value: "全てのカテゴリー", id: "all_btn"}
+            %ul.categoryTree-child
+            %ul.categoryTree-grandchild
+
         %li.Mokuji__themeLeft__item
-          = link_to "#" , id:"cateBtn"do
+          = link_to "#" , id:"brandBtn"do
             ブランド
       
       %ul.Mokuji__themeRight
@@ -27,7 +39,7 @@
           %li.Mokuji__themeRight__item.Mokuji__themeRight__item--log
             = link_to "ログアウト", destroy_user_session_path, method: :delete
           %li.Mokuji__themeRight__item.Mokuji__themeRight__item--new
-            = link_to edit_user_path(current_user) do
+            = link_to user_path(current_user) do
               = current_user.nickname
         - else
           %li.Mokuji__themeRight__item.Mokuji__themeRight__item--log

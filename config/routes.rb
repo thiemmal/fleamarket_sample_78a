@@ -3,7 +3,12 @@ Rails.application.routes.draw do
 
   root 'products#index'
 
-  resources :products, only:[:show,:edit,:new]
+  resources :products, only:[:show,:edit,:new, :create, :destroy]
   resources :users, only:[:show, :edit, :index, :update]
-
+  
+  resources :categories do
+    collection do
+      get :search
+    end
+  end
 end

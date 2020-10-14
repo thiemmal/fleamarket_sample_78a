@@ -5,6 +5,8 @@
 
   .AccountPage__form
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+      %p.alert
+      = alert
       .Forms
         %h2 登録ユーザー情報
         .FormField
@@ -20,3 +22,4 @@
               = f.password_field :password, autocomplete: "off"
           .actions
             = f.submit "ログイン", class: 'Button UserButton'
+= render 'shared/footer'

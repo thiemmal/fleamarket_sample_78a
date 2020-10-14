@@ -87,66 +87,24 @@
   .Product
     .Product__theme 全ての商品
     .Product__lists
-      = link_to '#' do
-        .Product__lists__set
-          =image_tag(src= "beef.jpeg", class: "Product__lists__set__image")
-          .Product__lists__set__content
-            .Product__lists__set__content__information
-              .Product__lists__set__content__information__name テスト
-              .Product__lists__set__content__information__price 10000円
-              .Product__lists__set__content__information__tax (税込)
-            .Product__lists__set__content__star 
-              .Product__lists__set__content__star__icon
-                = icon("fa", "star") 
-              .Product__lists__set__content__star__Evaluation 1
-
-      = link_to '#' do
-        .Product__lists__set
-          =image_tag(src= "IMG_9072.jpeg", class: "Product__lists__set__image")
-          .Product__lists__set__content
-            .Product__lists__set__content__information
-              .Product__lists__set__content__information__name ee
-              .Product__lists__set__content__information__price 1000円
-              .Product__lists__set__content__information__tax (税込)
-            .Product__lists__set__content__star 
-              = icon("fa", "star")
-              .Product__lists__set__content__star__Evaluation 0
-
-      = link_to '#' do
-        .Product__lists__set
-          =image_tag(src= "a007.png", class: "Product__lists__set__image")
-          .Product__lists__set__content
-            .Product__lists__set__content__information
-              .Product__lists__set__content__information__name product3
-              .Product__lists__set__content__information__price 30000円
-              .Product__lists__set__content__information__tax (税込)
-            .Product__lists__set__content__star 
-              = icon("fa", "star")
-              .Product__lists__set__content__star__Evaluation 0
       
-      = link_to '#' do
-        .Product__lists__set
-          =image_tag(src= "a004.png", class: "Product__lists__set__image")
-          .Product__lists__set__content
-            .Product__lists__set__content__information
-              .Product__lists__set__content__information__name product2
-              .Product__lists__set__content__information__price 20000円
-              .Product__lists__set__content__information__tax (税込)
-            .Product__lists__set__content__star 
-              = icon("fa", "star")
-              .Product__lists__set__content__star__Evaluation 0
-      
-      = link_to '#' do
-        .Product__lists__set
-          =image_tag(src= "a001.png", class: "Product__lists__set__image")
-          .Product__lists__set__content
-            .Product__lists__set__content__information
-              .Product__lists__set__content__information__name product1
-              .Product__lists__set__content__information__price 10000円
-              .Product__lists__set__content__information__tax (税込)
-            .Product__lists__set__content__star 
-              = icon("fa", "star")
-              .Product__lists__set__content__star__Evaluation 1
+      - @products.each do |product|
+        = link_to product_path(product.id), method: :get do
+          .Product__lists__set
+            =image_tag(src= "beef.jpeg", class: "Product__lists__set__image")
+            .Product__lists__set__content
+              .Product__lists__set__content__information
+                .Product__lists__set__content__information__name  
+                  = product.name
+                .Product__lists__set__content__information__price 
+                  = product.price.to_s(:delimited)  + "円"
+                .Product__lists__set__content__information__tax 
+                  (税込)
+              .Product__lists__set__content__star 
+                .Product__lists__set__content__star__icon
+                  = icon("fa", "star") 
+                .Product__lists__set__content__star__Evaluation 
+                  1
   
   .Download
     .Download__message
@@ -156,10 +114,15 @@
       = link_to image_tag(src= "Download_on_the_App_Store_Badge_US-UK_RGB_blk_092917.svg", class: "Middle__content__link__apple"), "#"
       = link_to image_tag(src= "google-play-badge.png", class: "Middle__content__link__google"), "#"
 
-
-= link_to new_product_path do
-  .Exhibition-btn
-    .Exhibition-btn__name 出品する
-    =image_tag(src= "icon_camera.png", class: "Exhibition-btn__image")
+- if user_signed_in?
+  = link_to new_product_path do
+    .Exhibition-btn
+      .Exhibition-btn__name 出品する
+      =image_tag(src= "icon_camera.png", class: "Exhibition-btn__image")
+- else
+  = link_to new_user_session_path do
+    .Exhibition-btn
+      .Exhibition-btn__name 出品する
+      =image_tag(src= "icon_camera.png", class: "Exhibition-btn__image")
 
 =render 'shared/footer'
