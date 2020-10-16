@@ -44,6 +44,8 @@
       }
       &__submit{
         height: 100px;
+        width: 100%;
+        display: none;
       }
     }
     
@@ -261,4 +263,30 @@
       text-align: center;
     }
   }
+}
+
+#previews{
+  width:100%; 
+  height: 200px; 
+  display:flex; 
+  overflow: hidden
+  
+}
+#image-select-btn{
+  width:100%; 
+  height:100%; 
+  background-color:gray; 
+  border:solid 4px red; 
+  cursor: pointer
+}
+.js-file{
+  display: none;
+}
+
+#delete_button_field{
+  display: flex;
+  .js-remove{
+  background-color: lawngreen;
+  width: 20%;
+  } 
 }

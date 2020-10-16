@@ -10,11 +10,21 @@
           出品画像 
           %span
             必須
-        %p.Product__image__detail 最大4枚までアップロードできます
-        = f.fields_for :images, @product.images.build do |i|
-          = i.file_field :url, class: 'Product__image__submit'
-          = render 'shared/error-messages', model: i.object
-
+        #previews
+          #image-select-btn
+            image select
+        #delete_button_field
+        %p.Product__image__detail 最大5枚までアップロードできます
+        #image-file-fileds
+          = f.fields_for :images, @product.images.build do |i|
+            = i.file_field :url, class: 'Product__image__submit',data:{index: i.index}
+            - if @product.persisted?
+              = image.check_box :_destroy, data:{ index: image.index }, class: 'hidden-destroy'
+          - if @product.persisted?
+            .js-file_group{"data-index" => "#{@product.images.count}"}
+            = file_field_tag :url, name: "product[images_attributes][#{@product.images.count}][url]", class: 'js-file'
+            .js-remove 削除
+            
       .Product__name
         %p.Product__name__title 
           商品名
@@ -54,7 +64,6 @@
               必須
           .Product__detail__status__select
             = f.collection_select :condition_id, Condition.all, :id, :name,{prompt: "選択してください"} , {class: 'Product__detail__status__select__form'}
-      
       .Product__delivery
         .Product__delivery__title 商品の配送
         .Product__delivery__burden 

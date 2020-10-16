@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_021227) do
+ActiveRecord::Schema.define(version: 2020_10_11_093738) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 2020_10_11_021227) do
     t.index ["product_id"], name: "index_images_on_product_id"
   end
 
+  create_table "orders", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "product_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["product_id"], name: "index_orders_on_product_id"
+    t.index ["user_id"], name: "index_orders_on_user_id"
+  end
+
   create_table "products", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
     t.integer "user_id"
@@ -36,10 +45,9 @@ ActiveRecord::Schema.define(version: 2020_10_11_021227) do
     t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.bigint "prefecture_id"
+    t.integer "prefecture_id"
     t.integer "condition_id"
     t.integer "days_id"
-    t.index ["prefecture_id"], name: "index_products_on_prefecture_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -71,4 +79,6 @@ ActiveRecord::Schema.define(version: 2020_10_11_021227) do
   end
 
   add_foreign_key "images", "products"
+  add_foreign_key "orders", "products"
+  add_foreign_key "orders", "users"
 end
