@@ -109,11 +109,11 @@
 
         .FormField
           .FormField__label--normal
-            = f.label :zip_cord, "郵便番号(ハイフン有り)"
+            = f.label :zip_cord, "郵便番号(ハイフン無し)"
             %span.FormField__label__require 必須
             %br/
           .FormField__input--normal
-            = f.text_field :zip_cord, placeholder: "例)000-0000"
+            = f.text_field :zip_cord, placeholder: "例)0000000"
         .FormField
           .FormField__label--normal
             = f.label :prefecture, "都道府県"
