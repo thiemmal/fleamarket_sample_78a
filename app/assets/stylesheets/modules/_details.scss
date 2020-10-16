@@ -5,6 +5,9 @@
 * {
   box-sizing: border-box;
 }
+a {
+  text-decoration: none;
+}
 // ヘッダー部分
 .Top{
   padding: 0 60px;
@@ -345,7 +348,19 @@ img{
             }
           }
         }
+        &__buy{
+          background-color: #3CCACE;
+          color: #fff;
+          height: 60px;
+          margin-top: 16px;
+          padding: auto;
+          font-weight: 600;
+          font-size: 24px;
+          line-height: 60px;
+          text-align: center;
+        }
         &__detail{
+          padding-top: 32px;
           line-height: 1.5;
           font-size: 18px;
           margin-bottom: 30px;
