@@ -33,10 +33,11 @@
           .Main__show__contRight__topCont__itemBox__body
             %ul
               %li
-                = image_tag src="https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG"
+                = image_tag @product.images[0].url.to_s
                 %ul
-                  %li
-                    = image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/18/beef.JPG", size: "75x75"
+                  -  @product.images.each do |image|
+                    %li{class:"choice"}
+                      = image_tag image.url.to_s
           .Main__show__contRight__topCont__itemBox__price
             %span
               = "¥" + @product.price.to_s(:delimited)
@@ -92,7 +93,7 @@
                   %th
                     商品の状態
                   %td
-                    =  @product.condition
+                    =  Condition.find(@product.days_id).name
                 %tr
                   %th
                     配送料の負担
@@ -108,7 +109,7 @@
                   %th
                     発送日の目安
                   %td
-                    -# =  @product.days
+                    =  Day.find(@product.days_id).name
           .Main__show__contRight__topCont__itemBox__aria
             %ul
               %li{class:"optionalBtn likeBtn",id:"likeBtn"}

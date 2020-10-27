@@ -313,18 +313,19 @@ img{
               img{
                 object-fit: cover;
                 height: 346px;
+                width: 560px;
               }
               ul{
                 display: flex;
                 justify-content: center;
                 margin-top: 10px;
-                // width: 100%;
-                li{
-                  width: 25%;
-                  margin: 0 10px 0 0;
+                li {
+                  width: 104px;
+                  margin: 0 5px;
                   img{
                     object-fit: cover;
                     height: 87px;
+                    width: 102px;
                   }
                 }
               }
@@ -428,6 +429,35 @@ img{
               }
             }
           }
+        }
+      }
+      &__topCont__action{
+        display: flex;
+        text-align: center;
+        &__edit{
+          background-color: #3CCACE;
+          color: #fff;
+          height: 60px;
+          margin-top: 16px;
+          margin-bottom: 8px;
+          width: 700px;
+          padding: auto;
+          font-size: 16px;
+          line-height: 60px;
+          text-align: center;
+          border-radius: 8px;
+        }
+        &__delete{
+          background-color: #cccccc;
+          color: #fff;
+          height: 60px;
+          margin-top: 8px;
+          width: 700px;
+          padding: auto;
+          font-size: 16px;
+          line-height: 60px;
+          text-align: center;
+          border-radius: 8px;
         }
       }
       &__topCont__comeBox{
