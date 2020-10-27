@@ -33,10 +33,11 @@
           .Main__show__contRight__topCont__itemBox__body
             %ul
               %li
-                = image_tag @product.images[0].url.to_s
+                #main-image
+                  = image_tag @product.images[0].url.to_s
                 %ul
                   -  @product.images.each do |image|
-                    %li{class:"choice"}
+                    %li{class:"choice", id:"image-list"}
                       = image_tag image.url.to_s
           .Main__show__contRight__topCont__itemBox__price
             %span
