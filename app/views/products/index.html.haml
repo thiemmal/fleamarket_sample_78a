@@ -105,6 +105,10 @@
                   = icon("fa", "star") 
                 .Product__lists__set__content__star__Evaluation 
                   1
+            -if product.orders.present? 
+              .items-box_photo__sold
+                .items-box_photo__sold__inner
+                  SOLD
   
   .Download
     .Download__message

@@ -19,4 +19,13 @@ class Product < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :day
   has_many :orders
+
+  def self.search(search)
+    if search != ""
+      Product.where('name LIKE(?) or details LIKE(?)', "%#{search}", "%#{search}%")
+    else
+      Product.all
+    end
+  end
+  
 end
