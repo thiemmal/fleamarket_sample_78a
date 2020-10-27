@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
   before_action :set_parents
 
   def index
-    @products = Product.last(5)
+    @products = Product.order("created_at DESC").first(5)
   end
 
   def new
