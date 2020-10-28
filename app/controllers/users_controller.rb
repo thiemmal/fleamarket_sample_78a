@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :set_parents
+
 
   def edit
   end
@@ -19,6 +21,10 @@ class UsersController < ApplicationController
 
   def user_params
     params.require(:user).permit(:nickname, :email [:url, :_destroy, :id])
+  end
+
+  def set_parents
+    @parents = Category.where(ancestry: nil)
   end
 
 end

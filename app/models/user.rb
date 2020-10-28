@@ -19,4 +19,5 @@ class User < ApplicationRecord
   validates :prefecture, presence: true
   validates :city, presence: true
   validates :address, presence: true
+  has_one :card, dependent: :destroy
 end

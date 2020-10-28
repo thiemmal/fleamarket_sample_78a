@@ -92,12 +92,12 @@
                     発送元の地域
                   %td
                     = link_to "#" do
-                      =  @product.origin
+                      =  @product.prefecture
                 %tr
                   %th
                     発送日の目安
                   %td
-                    =  @product.days
+                    =  @product.days_id
           .Main__show__contRight__topCont__itemBox__aria
             %ul
               %li{class:"optionalBtn likeBtn",id:"likeBtn"}
@@ -108,6 +108,10 @@
                 = link_to "#" do
                   %i{class:"fa fa-flag"}
                     不適切な商品の通報
+        = link_to buy_product_purchases_path(@product.id) do
+          .Exhibition-btn
+            .Exhibition-btn__name 購入する
+
         - if user_signed_in? && current_user.id == @product.user_id
           .Main__show__contRight__topCont__action
             %ul.action

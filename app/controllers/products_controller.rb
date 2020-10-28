@@ -38,6 +38,7 @@ class ProductsController < ApplicationController
   def edit
   end
 
+
   private
   
   def move_to_index
