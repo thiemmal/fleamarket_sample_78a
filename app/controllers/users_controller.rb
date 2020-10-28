@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :set_parents
 
-
   def edit
   end
 

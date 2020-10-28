@@ -9,6 +9,9 @@ Rails.application.routes.draw do
         get  "buy"
         post "pay"
       end
+      
+    collection do
+      get 'search'
     end
   end
   resources :users, only:[:show, :edit, :index, :update]

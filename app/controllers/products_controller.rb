@@ -1,9 +1,9 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_parents
 
   def index
-    @products = Product.last(5)
+    @products = Product.order("created_at DESC").first(5)
   end
 
   def new
@@ -33,6 +33,10 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+  end
+
+  def search
+    @products = Product.search(params[:keyword]).order("created_at DESC")
   end
 
   def edit
