@@ -5,7 +5,7 @@
         = link_to "/" do
           = image_tag src="logo.png"
       .Top__innerTop__main__seach
-        = form_with url: search_products_path, local: true, class: "Top__innerTop__main__seach__box", method: :get do |f|
+        = form_with url: search_categories_path, local: true, class: "Top__innerTop__main__seach__box", method: :get do |f|
           = f.text_field :keyword, placeholder: "キーワードから探す", class: "Top__innerTop__main__seach__box__text"
           = icon('fas', 'search', class: "Top__innerTop__main__seach__box__image")
           = f.submit "", class: "Top__innerTop__main__seach__box__btn"
