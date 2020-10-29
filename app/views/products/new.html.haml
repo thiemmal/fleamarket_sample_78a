@@ -37,7 +37,7 @@
           必須
         .Product__detail__category__select
           .Product__detail__category__select__box
-          = f.select :category, @category_parent_array, {}, {class: 'Product__detail__category__select__box--form', id: 'parent_category'}
+          = f.select :category_id, @category_parent_array, {}, {class: 'Product__detail__category__select__box--form', id: 'parent_category'}
           -# %i.fas.fa-chevron-down.Product__detail__category__select__box--arrow-down
 
         .Product__detail__brand

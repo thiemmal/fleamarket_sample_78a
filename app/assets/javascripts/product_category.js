@@ -1,6 +1,6 @@
 $(function(){
   function appendOption(category){
-    var html = `<option value="${category.name}" data-category="${category.id}">${category.name}</option>`;
+    var html = `<option value="${category.id}" data-category="${category.id}">${category.name}</option>`;
     return html;
   }
   function appendChidrenBox(insertHTML){
@@ -20,7 +20,7 @@ $(function(){
     var grandchildSelectHtml = '';
     grandchildSelectHtml = `<div class='Product__detail__category__select__add' id= 'grandchildren_wrapper'>
                               <div class='Product__detail__category__select__box'>
-                                <select class="Product__detail__category__select__box--form" id="grandchild_category" name="product[category_id]">
+                                <select class="Product__detail__category__select__box--form" id="grandchild_category" name="product[category_id">
                                   <option value="選択してください" data-category="選択してください">選択してください</option>
                                   ${insertHTML}
                                 <select>
@@ -33,7 +33,7 @@ $(function(){
     var parentCategory = document.getElementById('parent_category').value;
     if (parentCategory != "選択してください"){
       $.ajax({
-        url: 'get_category_children',
+        url: '/products/get_category_children',
         type: 'GET',
         data: { parent_name: parentCategory },
         dataType: 'json'
@@ -59,7 +59,7 @@ $(function(){
     var childId = $('#child_category option:selected').data('category');
     if (childId != "選択してください"){
       $.ajax({
-        url: 'get_category_grandchildren',
+        url: '/products/get_category_grandchildren',
         type: 'GET',
         data: { child_id: childId },
         dataType: 'json'
