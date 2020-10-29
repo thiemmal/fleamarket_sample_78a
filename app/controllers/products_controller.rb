@@ -1,15 +1,15 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :set_parents
 
   def index
-    @products = Product.last(5)
+    @products = Product.order("created_at DESC").first(5)
   end
 
   def new
     @product = Product.new
     @product.images.new
-
+    
     @category_parent_array = ["選択してください"]
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
   def get_category_grandchildren
     @category_grandchildren = Category.find("#{params[:child_id]}").children
+
   end
 
   def create
@@ -54,6 +55,10 @@ class ProductsController < ApplicationController
     @product = Product.find(params[:id])
   end
 
+  def search
+    @products = Product.search(params[:keyword]).order("created_at DESC")
+  end
+
   def edit
   end
 
@@ -68,9 +73,12 @@ class ProductsController < ApplicationController
   def product_params
     params.require(:product).permit(:category_id, :name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url]).merge(user_id: current_user.id)
   end
+  
+  def set_product
+    @product = Product.find(params[:id])
+  end
 
   def set_parents
     @parents = Category.where(ancestry: nil)
   end
-
 end

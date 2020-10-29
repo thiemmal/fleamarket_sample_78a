@@ -73,7 +73,11 @@ gem 'devise'
 gem 'carrierwave'
 gem 'fog-aws'
 gem 'font-awesome-sass'
+
+gem 'pry-rails'
 gem 'mini_magick'
+gem 'active_hash'
 
 gem 'jquery-rails'
+
 

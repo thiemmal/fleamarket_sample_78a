@@ -27,9 +27,9 @@
     margin: 0 auto;
     background-color: #fff;
     height: 100%;
-    padding:0 40px 0 40px;;
+    padding:20px 40px 0 40px;
     &__image{
-      padding-top: 30px;
+      padding-top: 10px;
       border-bottom: 2px solid #EEEEEE;
       padding-bottom: 20px;
       &__title{
@@ -43,8 +43,9 @@
         margin-top: 7px;
       }
       &__submit{
-        height: 80px;
+        height: 100px;
         width: 100%;
+        display: none;
       }
     }
     
@@ -171,22 +172,6 @@
           }
         }
       }
-      &__method{
-        margin-top: 30px;
-        &__title{
-          font-size: 15px;
-          span{
-            @include span;
-          }
-        }
-        &__select{
-          margin-top: 15px;
-          &__form{
-            width: 100%;
-            height: 50px;
-          }
-        }
-      }
       &__region{
         margin-top: 30px;
         &__title{
@@ -284,4 +269,30 @@
       text-align: center;
     }
   }
+}
+
+#previews{
+  width:100%; 
+  height: 200px; 
+  display:flex; 
+  overflow: hidden
+  
+}
+#image-select-btn{
+  width:100%; 
+  height:100%; 
+  background-color:gray; 
+  border:solid 4px red; 
+  cursor: pointer
+}
+.js-file{
+  display: none;
+}
+
+#delete_button_field{
+  display: flex;
+  .js-remove{
+  background-color: lawngreen;
+  width: 20%;
+  } 
 }
