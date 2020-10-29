@@ -32,7 +32,6 @@ class ProductsController < ApplicationController
     Category.where(ancestry: nil).each do |parent|
       @category_parent_array << parent.name
     end
-    binding.pry
     if @product.save
       redirect_to root_path
     else
