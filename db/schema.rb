@@ -21,6 +21,9 @@ ActiveRecord::Schema.define(version: 2020_10_18_103048) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
+# ActiveRecord::Schema.define(version: 2020_10_11_093738) do
+
+
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
@@ -54,9 +57,13 @@ ActiveRecord::Schema.define(version: 2020_10_18_103048) do
     t.integer "price", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+
+    t.integer "category_id"
+
     t.integer "prefecture_id"
     t.integer "condition_id"
     t.integer "days_id"
+
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
