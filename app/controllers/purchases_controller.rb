@@ -4,7 +4,6 @@ class PurchasesController < ApplicationController
 
   def buy
     # 購入する商品を引っ張ってきます。
-    @product = Product.find(params[:product_id])
     # 商品ごとに複数枚写真を登録できるので、一応全部持ってきておきます。
     @images = @product.images.all
 
@@ -24,7 +23,6 @@ class PurchasesController < ApplicationController
         @exp_month = @customer_card.exp_month.to_s
         ## 有効期限'年'を定義
         @exp_year = @customer_card.exp_year.to_s.slice(2,3)
-      else
       end
     else
       # ログインしていなければ、商品の購入ができずに、ログイン画面に移動します。
@@ -34,9 +32,7 @@ class PurchasesController < ApplicationController
 
   def pay
     #ちなみに見やすさ考慮し、before_actionなどのリファクタリングなどはあえてしてません。
-    @product = Product.find(params[:product_id])
     @images = @product.images.all
-
     # 購入テーブル登録ずみ商品は２重で購入されないようにする
     # (２重で決済されることを防ぐ)
     if @product.orders.present?
@@ -74,5 +70,6 @@ class PurchasesController < ApplicationController
   private
   def set_purchase
     @card = Card.find_by(user_id: current_user.id)
+    @product = Product.find(params[:product_id])
   end
 end
