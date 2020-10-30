@@ -1,5 +1,6 @@
 class CardsController < ApplicationController
   require 'payjp'
+  before_action :set_card, only: [:destroy, :show]
 
   def new
     @card = Card.where(user_id: current_user.id)
@@ -34,7 +35,6 @@ class CardsController < ApplicationController
 
   def show
     # ログイン中のユーザーのクレジットカード登録の有無を判断
-    @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       # 未登録なら新規登録画面に
       redirect_to action: "new" 
@@ -54,7 +54,6 @@ class CardsController < ApplicationController
 
   def destroy
     # ログイン中のユーザーのクレジットカード登録の有無を判断
-    @card = Card.find_by(user_id: current_user.id)
     if @card.blank?
       # 未登録なら新規登録画面に
       redirect_to action: "new"
@@ -74,5 +73,9 @@ class CardsController < ApplicationController
         redirect_to card_path(current_user.id), alert: "削除できませんでした。"
       end
     end
+  end
+  private
+  def set_card
+    @card = Card.find_by(user_id: current_user.id)
   end
 end

@@ -1,5 +1,3 @@
-
-
 window.addEventListener('DOMContentLoaded', function(){
 
   //id名が"payment_card_submit-button"というボタンが押されたら取得

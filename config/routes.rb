@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
 
   root 'products#index'
-  
+
   resources :products, only: [:show, :new, :edit, :destroy, :create, :index] do
     collection do
       get :search
@@ -19,8 +19,7 @@ Rails.application.routes.draw do
 
   resources :users, only:[:show, :edit, :index, :update]
 
-  resources :cards, only: [:new, :create, :show, :destroy] do
-  end
+  resources :cards, only: [:new, :create, :show, :destroy] 
   
   resources :categories do
     collection do

@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   require "payjp"
+  before_action :set_purchase, only: [:buy, :pay]
 
   def buy
     # 購入する商品を引っ張ってきます。
@@ -15,7 +16,6 @@ class PurchasesController < ApplicationController
         # 前前前回credentials.yml.encに記載したAPI秘密鍵を呼び出します。
         Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
         # ログインユーザーのクレジットカード情報を引っ張ってきます。
-        @card = Card.find_by(user_id: current_user.id)
         # (以下は以前のcredit_cardsコントローラーのshowアクションとほぼ一緒です)
         # ログインユーザーのクレジットカード情報からPay.jpに登録されているカスタマー情報を引き出す
         customer = Payjp::Customer.retrieve(@card.customer_id)
@@ -49,7 +49,6 @@ class PurchasesController < ApplicationController
         if current_user.card.present?
           # ログインユーザーがクレジットカード登録済みの場合の処理
           # ログインユーザーのクレジットカード情報を引っ張ってきます。
-          @card = Card.find_by(user_id: current_user.id)
           # 前前前回credentials.yml.encに記載したAPI秘密鍵を呼び出します。
           Payjp.api_key = Rails.application.credentials.dig(:payjp, :secret_key)
           #登録したカードでの、クレジットカード決済処理
@@ -73,5 +72,8 @@ class PurchasesController < ApplicationController
       end
     end
   end
-
+  private
+  def set_purchase
+    @card = Card.find_by(user_id: current_user.id)
+  end
 end
