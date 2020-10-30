@@ -92,7 +92,7 @@
                   %th
                     商品の状態
                   %td
-                    =  Condition.find(@product.days_id).name
+                    =  Condition.find(@product.condition_id).name
                 %tr
                   %th
                     配送料の負担
@@ -103,7 +103,7 @@
                     発送元の地域
                   %td
                     = link_to "#" do
-                      =  @product.user.prefecture
+                      =  Prefecture.find(@product.prefecture_id).name
                 %tr
                   %th
                     発送日の目安
