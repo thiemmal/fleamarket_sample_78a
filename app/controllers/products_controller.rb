@@ -61,6 +61,10 @@ class ProductsController < ApplicationController
   def edit
   end
 
+  def compilation
+    @product = Product.find(params[:id])
+  end
+
   private
   
   def move_to_index
