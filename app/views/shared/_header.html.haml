@@ -12,13 +12,13 @@
     .Mokuji
       %ul.Mokuji__themeLeft
         %li.Mokuji__themeLeft__item.Mokuji__themeLeft__item--one
-          = link_to categories_path, id: 'categoBtn' do
+          = link_to "#", id: 'categoBtn' do
             カテゴリー
           #tree_menu
             %ul.categoryTree
               - @parents.each do |parent|
                 %li.category_parent
-                  = link_to category_path(parent) do
+                  = link_to "#" do
                     %input{type: "button", value: "#{parent.name}", name: "#{parent.id}", class: "parent_btn"}
               %li.category_parent
                 = link_to categories_path do
