@@ -21,26 +21,6 @@ class PurchasesController < ApplicationController
         customer = Payjp::Customer.retrieve(@card.customer_id)
         # カスタマー情報からカードの情報を引き出す
         @customer_card = customer.cards.retrieve(@card.card_id)
-
-        ##カードのアイコン表示のための定義づけ
-        # @card_brand = @customer_card.brand
-        # case @card_brand
-        # when "Visa"
-        #   # 例えば、Pay.jpからとってきたカード情報の、ブランドが"Visa"だった場合は返り値として
-        #   # (画像として登録されている)Visa.pngを返す
-        #   @card_src = "visa.gif"
-        # when "JCB"
-        #   @card_src = "jcb.gif"
-        # when "MasterCard"
-        #   @card_src = "master.png"
-        # when "American Express"
-        #   @card_src = "amex.gif"
-        # when "Diners Club"
-        #   @card_src = "diners.gif"
-        # when "Discover"
-        #   @card_src = "discover.gif"
-        # end
-        # viewの記述を簡略化
         ## 有効期限'月'を定義
         @exp_month = @customer_card.exp_month.to_s
         ## 有効期限'年'を定義

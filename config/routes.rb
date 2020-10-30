@@ -9,7 +9,7 @@ Rails.application.routes.draw do
         get  "buy"
         post "pay"
       end
-      
+    end
     collection do
       get 'search'
     end
