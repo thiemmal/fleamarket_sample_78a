@@ -73,17 +73,11 @@
                   %td
                     =  @product.user.nickname
                 %tr
-                  %th
-                    カテゴリー
+                  %th カテゴリー
                   %td
-                    = link_to "#" do
-                      レディース
-                    %br/
-                    = link_to "#" do
-                      トップス
-                    %br/
-                    = link_to "#" do
-                      Tシャツ/カットソー(半袖/袖なし)
+                    = link_to "#{@category_parent.name}","#"
+                    %br= link_to "#{@category_child.name}","#"
+                    = link_to "#{@category_grandchild.name}","#"
                 %tr
                   %th
                     ブランド
