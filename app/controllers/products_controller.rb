@@ -68,6 +68,23 @@ class ProductsController < ApplicationController
 
   def compilation
     @product = Product.find(params[:id])
+    @images = Image.where(product_id: params[:id])
+    @product.images.new
+    #@category_id = @product.category_id
+    #@category_parent_array = []
+    #Category.where(ancestry: nil).each do |parent|
+      #@category_parent_array << parent.name
+    #end
+    
+  end
+
+  def update
+    @product = Product.find(params[:id])
+    if @product.update_attributes(product_params)
+      redirect_to "/"
+    else
+      render action: :compilation
+    end
   end
 
   private
@@ -79,7 +96,7 @@ class ProductsController < ApplicationController
   end
 
   def product_params
-    params.require(:product).permit(:prefecture_id, :days_id, :condition_id, :category_id, :name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url]).merge(user_id: current_user.id)
+    params.require(:product).permit(:prefecture_id, :days_id, :condition_id, :category_id, :name, :details, :price, :condition, :fee_side, :origin, :days, images_attributes: [:url, :_destroy, :id]).merge(user_id: current_user.id)
   end
   
   def set_product
