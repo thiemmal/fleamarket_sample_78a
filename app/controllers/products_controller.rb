@@ -52,6 +52,11 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+
+    @category_id = @product.category_id
+    @category_parent = Category.find(@category_id).parent.parent
+    @category_child = Category.find(@category_id).parent
+    @category_grandchild = Category.find(@category_id)
   end
 
   def search
