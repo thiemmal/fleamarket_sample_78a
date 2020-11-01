@@ -80,6 +80,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find(params[:id])
+    @images = Image.where(product_id: params[:id])
     if @product.update_attributes(product_params)
       redirect_to "/"
     else
