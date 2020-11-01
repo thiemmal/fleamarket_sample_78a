@@ -19,7 +19,7 @@ class Product < ApplicationRecord
   belongs_to_active_hash :prefecture
   belongs_to_active_hash :condition
   belongs_to_active_hash :day
-  has_many :orders
+  has_many :orders, dependent: :destroy
 
   def self.search(search)
     if search != ""
