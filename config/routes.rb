@@ -9,9 +9,17 @@ Rails.application.routes.draw do
       get 'get_category_children', defaults: { format: 'json' }
       get 'get_category_grandchildren', defaults: { format: 'json' }
     end
+    resource :purchases do
+      member do
+        get  "buy"
+        post "pay"
+      end
+    end
   end
 
   resources :users, only:[:show, :edit, :index, :update]
+
+  resources :cards, only: [:new, :create, :show, :destroy] 
   
   resources :categories do
     collection do
