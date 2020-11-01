@@ -3,6 +3,7 @@ ja:
   activerecord:
     attributes:
       product:
+        category: "カテゴリー"
         images: "出品画像"
         name: "商品名"
         details: "商品の説明"
