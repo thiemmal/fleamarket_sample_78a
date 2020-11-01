@@ -21,7 +21,6 @@ ActiveRecord::Schema.define(version: 2020_10_25_092450) do
     t.index ["user_id"], name: "index_cards_on_user_id"
   end
 
-
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", precision: 6, null: false

@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
     member do
       get :compilation
+    end
 
     resource :purchases do
       member do
