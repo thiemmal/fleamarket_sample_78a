@@ -7,7 +7,7 @@
           支払い金額   
         .amount
           = "#{@product.price}" + "円"
-      - if @user.card.present?
+      - if current_user.card.present?
         .purchase_function
           .credit_card_info_title
             クレジットカード情報
