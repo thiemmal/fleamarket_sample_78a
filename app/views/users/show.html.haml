@@ -87,7 +87,7 @@
           .content-field__top__user__link__icon
             =image_tag(src= "beef.jpeg", class: "content-field__top__user__link__icon__image")
           %h2.content-field__top__user__link__name
-            田中
+            = current_user.nickname
           .content-field__top__user__link__number
             .content-field__top__user__link__number__left
               評価
