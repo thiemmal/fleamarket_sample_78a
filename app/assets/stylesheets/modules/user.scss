@@ -51,13 +51,19 @@
     border-radius: 2px;
     color: #fff;
     font-size: 12px;
-    vertical-align: top;
   }
 
   &__input--normal {
     margin: 8px 0 0;
     height: 48px;
     input {
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      width: 100%;
+      padding: 10px;
+      letter-spacing: 1px;
+    }
+    select {
       box-sizing: border-box;
       border: 1px solid #ccc;
       width: 100%;

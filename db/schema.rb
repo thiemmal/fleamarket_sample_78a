@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_11_093738) do
+ActiveRecord::Schema.define(version: 2020_10_31_165523) do
+
+  create_table "cards", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "customer_id", null: false
+    t.string "card_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_cards_on_user_id"
+  end
+
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name"
@@ -48,6 +58,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_093738) do
     t.integer "prefecture_id"
     t.integer "condition_id"
     t.integer "days_id"
+    t.integer "category_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
@@ -65,7 +76,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_093738) do
     t.string "family_furigana", null: false
     t.integer "birthday", null: false
     t.integer "zip_cord", null: false
-    t.string "prefecture", null: false
+    t.integer "prefecture", null: false
     t.string "city", null: false
     t.string "address", null: false
     t.string "mansion", null: false
@@ -78,6 +89,7 @@ ActiveRecord::Schema.define(version: 2020_10_11_093738) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "cards", "users"
   add_foreign_key "images", "products"
   add_foreign_key "orders", "products"
   add_foreign_key "orders", "users"

@@ -1,3 +1,6 @@
+.Body
+  - flash.each do |message_type, message|
+    = content_tag :div, message, class: message_type
 .AccountPage
   = link_to root_path do
     .Logo
@@ -5,8 +8,7 @@
 
   .AccountPage__form
     = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-      %p.alert
-      = alert
+      = devise_error_messages!
       .Forms
         %h2 登録ユーザー情報
         .FormField
