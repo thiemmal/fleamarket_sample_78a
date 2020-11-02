@@ -74,7 +74,7 @@
             .list__content__right
               = icon("fas", "chevron-right")
         %li
-          = link_to "#", class:"list__content" do
+          = link_to destroy_user_session_path, method: :delete, class:"list__content" do
             .list__content__left
               ログアウト
             .list__content__right
